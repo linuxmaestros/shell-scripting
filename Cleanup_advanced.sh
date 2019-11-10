@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG_DIR=/var/log 
-ROOT_UID # Only users with $UID 0 have root privileges
+ROOT_UID=0 # Only users with $UID 0 have root privileges
 LINES=50  # Default number of lines saved
 E_XCD=86 
 E_NOTROOT=87
@@ -24,7 +24,7 @@ fi
 
 cd $LOG_DIR
 
-if [ `pwd` != "$LOG_DIR"  # or if [ "$PWD" != "LOG_DIR" ]
+if [ `pwd` != "$LOG_DIR" ] # or if [ "$PWD" != "LOG_DIR" ]
 then
    echo "Can't change to $LOG_DIR."
 exit $E_XCD

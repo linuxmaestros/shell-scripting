@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Script to find the number of users logged in and uptime
+
+echo "Users logged in                     From          LoginTime"
+echo "-----------------------------------------------------------"
+user=`w | cut -d" " -f1`
+from=`w | cut -d" " -f2`
+when=`w | cut -d" " -f4`
+printf "%8s" "%15s" "%25s" "$user" "$from" "$when"
+echo "End of the report"
